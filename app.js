@@ -9,7 +9,7 @@ app.use(bodyparser.urlencoded({extended: false}));
 app.use(bodyparser.json());
 
 
-const port= 3000;
+const PORT = process.env.PORT || 3000;
 
 
 // Conexion a Base de Datos
@@ -49,6 +49,6 @@ app.use((req, res, next)=>{
 
 // Inicio del Servidor
 
-app.listen(port, ()=>{
+app.listen(PORT, ()=>{
 	console.log(`Serviodor listo en: http://localhost:${port}`);
 })

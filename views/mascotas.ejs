@@ -26,7 +26,10 @@
 						<th class="py-3"><%= mascota.id %></th>
 						<td class="text-center"><%= mascota.nombre %></td>
 						<td class="text-center"><%= mascota.raza %> / <%= mascota.color %> </td>
-						<td class="text-center">@Accion</td>
+						<td class="text-center">
+							<a href="/mascotas/<%= mascota.id %>"
+								class="bg-yellow-300 p-2 rounded-xl">Editar</a>
+						</td>
 					</tr>
 
 				<%})%>

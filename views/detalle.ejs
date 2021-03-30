@@ -1,0 +1,79 @@
+<<%- include("template/cabecera", {tituloWeb : 'Detalle de mascota'}) %>
+
+<div class="text-center">
+	<div class="container w-3/5 my-10 m-auto">
+	<h1 class="text-6xl my-8">Detalles</h1>
+
+	<% if (error) { -%>
+
+		<h2 
+		class="text-3xl bg-red-500 py-4 rounded-2xl mb-8"
+		><%= mensaje %></h2>
+
+		<a href="/mascotas" class="w-1/3 py-3 rounded-3xl p-4 mb-8 bg-gray-600 text-2xl text-gray-200 hover:bg-gray-300 hover:text-gray-700 duration-500"
+		>Volver a Mascotas</a>
+		
+	<% } else { -%>
+
+
+		<table class="bg-gray-100 w-3/5 m-auto mt-7 rounded-2xl">
+
+			<thead>
+				<tr class="border-b-4 border-gray-500">
+					<th class="text-2xl">Nombre</th>
+					<th class="text-2xl">Color</th>
+					<th class="text-2xl">Raza</th>					<th class="text-2xl">Accion</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				<tr class="border-t-2 border-gray-200">
+					<td class="text-center text-xl"><%= mascota.nombre %></td>
+					<td class="text-center text-xl"><%= mascota.color %> </td>
+					<td class="text-center text-xl"><%= mascota.raza %></td>
+					<td class="text-center text-xl">
+						<button class="bg-red-500 p-2 rounded-xl font-bold" id="btnEliminar" data-id="<%= mascota.id %>">
+							Eliminar
+						</button>
+					</td>
+				</tr>
+		
+			</tbody>
+
+		</table>
+		
+	<% } -%>
+
+	
+	
+
+</div>
+
+<%- include("template/footer") %>
+
+<script>
+	
+	const btnEliminar = document.getElementById('btnEliminar');
+
+	btnEliminar.addEventListener('click', async() => {
+
+		const id = btnEliminar.dataset.id;
+		console.log("id: ", id);
+
+		try{
+
+			const data = await fetch(`/mascotas/${id}`,{method: 'delete'});
+			const res = await data.json();
+
+			if (res.estado){
+				window.location.href = '/mascotas';
+			}else{
+				console.log(res);
+			}
+
+		}catch(error){
+			console.log(error)
+		}
+	})
+
+</script>

@@ -1,19 +1,19 @@
 <%- include("template/cabecera", {tituloWeb : 'Agregar Mascota'}) %>
 
 <div class="text-center">
-	<div class="container bg-blue-100 w-3/5 my-10 m-auto">
+	<div class="container w-3/5 my-10 m-auto">
 	<h1 class="text-6xl my-8">Crear</h1>
 
 	<form action="/mascotas" method="POST">
 
 		<input type="text" name="nombre" placeholder="Agregar Nombre"
-		class="w-3/4 h-14 rounded-3xl p-4 mb-8 border-gray-600 border-2">
+		class="w-3/4 h-14 rounded-3xl p-4 mb-8 border-gray-600 border-2" required>
 
 		<input type="text" name="color" placeholder="Agregar Color"
-		class="w-3/4 h-14 rounded-3xl p-4 mb-8 border-gray-600 border-2">
+		class="w-3/4 h-14 rounded-3xl p-4 mb-8 border-gray-600 border-2" required>
 		
 		<input type="text" name="raza" placeholder="Agregar Raza"
-		class="w-3/4 h-14 rounded-3xl p-4 mb-8 border-gray-600 border-2">
+		class="w-3/4 h-14 rounded-3xl p-4 mb-8 border-gray-600 border-2" required>
 
 		<button type="submit" class="w-1/3 py-3 rounded-3xl p-4 mb-8 bg-green-600 text-2xl hover:bg-green-300 duration-500">
 			Agregar

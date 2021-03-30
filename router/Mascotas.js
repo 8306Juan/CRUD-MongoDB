@@ -37,4 +37,51 @@ router.post('/', async (req, res)=>{
 	}
 })
 
+router.get("/:id", async (req, res)=>{
+
+	const id = req.params.id;
+
+	try{
+
+		const mascotaDB = await Mascota.findOne({_id: id});
+
+		res.render('detalle',{
+			mascota: mascotaDB,
+			error: false
+		})
+
+	}catch(error){
+	res.render('detalle',{
+			error: true,
+			mensaje: "No se pudo encontrar el ID seleccionado :/"
+		})
+	}
+
+})
+
+router.delete('/:id', async (req, res)=>{
+
+	const id = req.params.id;
+
+	try{
+
+		const mascotaDB = await Mascota.findOneAndDelete({_id: id})
+
+		if (mascotaDB){
+			res.json({
+				estado: true,
+				mesaje: 'Eliminado'
+			})
+		}else{
+			res.json({
+				estado: false,
+				mesaje: 'Fallo al Eliminar'
+			})
+		}
+
+	}catch(error){
+		console.log(error);
+	}
+})
+
 module.exports = router;
