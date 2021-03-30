@@ -1,0 +1,38 @@
+<%- include("template/cabecera", {tituloWeb : 'Clientes'}) %>
+
+<div>
+
+	<table class="bg-gray-100 w-3/5 m-auto mt-14 rounded-2xl">
+		
+		<thead>
+			<tr class="border-b-4 border-gray-500">
+				<th>ID</th>
+				<th>Nombre</th>
+				<th>Apellido</th>
+				<th>Mascota/s</th>
+			</tr>
+		</thead>
+		<tbody>
+
+			<% if (arrayClientes.length > 0) { -%>
+		
+				<% arrayClientes.forEach(cliente => {%>
+
+					<tr class="border-t-2 border-gray-200">
+						<th class="py-3"><%= cliente.id %></th>
+						<td class="text-center"><%= cliente.nombre %></td>
+						<td class="text-center"><%= cliente.apellido %></td>
+						<td class="text-center"><%= cliente.mascota %></td>
+					</tr>
+
+				<%})%>
+
+			<% } -%>
+			
+		</tbody>
+
+	</table>
+
+</div>
+
+<%- include("template/footer") %>

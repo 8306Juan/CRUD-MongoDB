@@ -1,0 +1,42 @@
+<%- include("template/cabecera", {tituloWeb : 'Mascotas'}) %>
+
+<div>
+
+	<a href="/mascotas/crear" class="block text-center w-1/2 m-auto mt-8 rounded-xl py-2 bg-green-600 text-2xl hover:bg-green-300 duration-500 m-auto">
+			Crear Nueva Mascota
+	</a>
+
+	<table class="bg-gray-100 w-3/5 m-auto mt-7 rounded-2xl">
+
+		<thead>
+			<tr class="border-b-4 border-gray-500">
+				<th>ID</th>
+				<th>Nombre</th>
+				<th>Descripcion</th>
+				<th>Accion</th>
+			</tr>
+		</thead>
+		<tbody>
+
+			<% if (arrayMascotas.length > 0) { -%>
+		
+				<% arrayMascotas.forEach(mascota => {%>
+
+					<tr class="border-t-2 border-gray-200">
+						<th class="py-3"><%= mascota.id %></th>
+						<td class="text-center"><%= mascota.nombre %></td>
+						<td class="text-center"><%= mascota.raza %> / <%= mascota.color %> </td>
+						<td class="text-center">@Accion</td>
+					</tr>
+
+				<%})%>
+
+			<% } -%>
+			
+		</tbody>
+
+	</table>
+
+</div>
+
+<%- include("template/footer") %>
