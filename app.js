@@ -50,5 +50,5 @@ app.use((req, res, next)=>{
 // Inicio del Servidor
 
 app.listen(PORT, ()=>{
-	console.log(`Serviodor listo en: http://localhost:${port}`);
+	console.log(`Serviodor listo en: http://localhost:${PORT}`);
 })
