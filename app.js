@@ -2,6 +2,8 @@ const express = require('express');
 const bodyparser = require('body-parser');
 const app = express();
 
+// Variables de Entorno
+require('dotenv').config()
 
 //parse application/x-www-forum-urlencoded
 app.use(bodyparser.urlencoded({extended: false}));
@@ -14,7 +16,13 @@ const PORT = process.env.PORT || 3000;
 
 // Conexion a Base de Datos
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/veterinaria', 
+
+const user = process.env.USER;
+const password = process.env.PASSWORD;
+const dbname = process.env.DBNAME;
+const uri = `mongodb+srv://${user}:${password}@cluster0.hgzr4.mongodb.net/${dbname}?retryWrites=true&w=majority`;
+
+mongoose.connect(uri, 
 	{ useNewUrlParser: true, useUnifiedTopology:true })
 
 	.then(() => console.log("Base de datos conectada"))
