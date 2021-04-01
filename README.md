@@ -1,27 +1,31 @@
 # CRUD-MongoDB
-CRUD - NODEjs - Express - EJS - MongoDB - Mongoose
 
-# El encabezado más largo
-## El segundo encabezado más largo
-###### El encabezado más pequeño
 
-**Negrita**
-*Cursiva*
-~Tachado~
-***Negrita y Cursiva***
-
-> texto Citado
-
+## Que es esto?
+  Es mi primer CRUD realizado con:
+    -NODEjs
+    -Express
+    -EJS
+    -MongoDB
+    -Mongoose
+    
+    
+    
+##Intalar dependencias
 ```
-Codigo de cita
+npm install
+```
+
+##Configurar
+Debe crear un archivo **.env** para configurar el **user**, **password** y **dbname**
+
+### O localhost
+Eliminar la Variable **uri** y colocar el link de localhost
+
+##Ejecutar
+```
 npm run dev
-
 ```
 
-Link hacia mi [Portfolio] (https://8306juan.github.io/Portfolio/)
 
-Checks
-- [x] Soy bellicimo?
-- [x] Setsi?
-- [] takauishi?
-- [] ...
+Link hacia mi [Portfolio](https://8306juan.github.io/Portfolio/)
