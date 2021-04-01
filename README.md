@@ -5,10 +5,10 @@ CRUD - NODEjs - Express - EJS - MongoDB - Mongoose
 ## El segundo encabezado más largo
 ###### El encabezado más pequeño
 
-** Negrita **
-* Cursiva *
-~ Tachado ~
-*** Negrita y Cursiva ***
+**Negrita**
+*Cursiva*
+~Tachado~
+***Negrita y Cursiva***
 
 > texto Citado
 
@@ -21,7 +21,7 @@ npm run dev
 Link hacia mi [Portfolio] (https://8306juan.github.io/Portfolio/)
 
 Checks
--[x] Soy bellicimo?
--[x] Setsi?
--[] takauishi?
--[] ...
+- [x] Soy bellicimo?
+- [x] Setsi?
+- [] takauishi?
+- [] ...
